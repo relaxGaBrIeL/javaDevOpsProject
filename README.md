@@ -1,1 +1,1 @@
-# javaDevOpsProject
+# Projet Java DevOps

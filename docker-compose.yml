@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:10.5
+    container_name: devops-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=devopsLBN
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db-data:
+    driver: local

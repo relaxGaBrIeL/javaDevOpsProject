@@ -1,0 +1,16 @@
+.home_welcome{
+    -fx-background-color: #123A13;
+    -fx-spacing: 15;
+}
+.home_welcome Button{
+    -fx-background-color: #074be0;
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 1.2em;
+}
+.home_welcome Button:hover{
+    -fx-cursor: hand;
+}
+
+.home_welcome FontAwesomeIconView {
+    -fx-fill: #ECF39E;
+}

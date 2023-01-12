@@ -1,0 +1,73 @@
+.btn{
+    -fx-background-color: #123A13;
+    -fx-fill: #FFFFFF;
+    -fx-pref-width: 350;
+    -fx-pref-height: 30;
+    -fx-font-size: 1.2em;
+}
+.btn:hover{
+    -fx-cursor: hand;
+}
+
+.login_container{
+    -fx-background-color: #c2c0c0;
+}
+/*Logo container Style*/
+.login-logo_container{
+    -fx-background-color: #132A13;
+    -fx-alignment: center;
+}
+.login-logo_container{
+    -fx-font-size: 2em;
+    -fx-fill: #ffffff;
+}
+.login-logo_container FontAwesomeIconView{
+    -fx-fill: #ECF39E;
+}
+
+/**
+   Login Form styles
+ */
+.login-form_container{
+    -fx-spacing: 15;
+    -fx-alignment: top_left;
+
+}
+.login-form_title{
+    -fx-font-weight: bold;
+
+}
+.login-form_container Label, .register-form_container Label{
+    -fx-font-size: 1.1em;
+    -fx-font-weight: bold;
+
+}
+.input_field{
+    -fx-background-color: #ffffff;
+    -fx-pref-height: 35;
+    -fx-font-size: 1.2em;
+}
+
+.login-form_container Button{
+    -fx-background-color: #123A13;
+    -fx-fill: #FFFFFF;
+    -fx-pref-width: 350;
+    -fx-pref-height: 30;
+    -fx-font-size: 1.2em;
+}
+.login-form_container Button:hover{
+    -fx-cursor: hand;
+}
+.error_lbl{
+    -fx-text-fill: #FF0000;
+}
+
+/**
+    Register form
+ */
+.register-form_container{
+    -fx-spacing: 5;
+    -fx-alignment: top_left;
+}
+
+

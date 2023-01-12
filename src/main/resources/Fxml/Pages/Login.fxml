@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../../Styles/authentification.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.LoginController">
+    <VBox layoutX="-4.0" prefHeight="400.0" prefWidth="200.0" styleClass="login-logo_container" stylesheets="@../../Styles/authentification.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <FontAwesomeIconView glyphName="HOME" size="50" />
+        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BUREAU NUMERIQUE" textAlignment="CENTER" wrappingWidth="232.8828125">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Text>
+    </VBox>
+    <VBox fx:id="login_form" layoutX="251.0" layoutY="112.0" prefHeight="250.0" prefWidth="335.0" styleClass="login-form_container">
+        <Label text="e-mail :" />
+        <TextField fx:id="email_field" styleClass="input_field" />
+        <Label text="Password :" />
+        <TextField fx:id="password_field" styleClass="input_field" />
+        <Button fx:id="login_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Connexion" textAlignment="CENTER" textFill="#efe5e5" />
+        <Label fx:id="error_form" styleClass="error_lbl" text="Error" />
+        <Button fx:id="register_btn" mnemonicParsing="false" text="S'inscrire" textFill="WHITE" />
+    </VBox>
+    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#132a13" height="44.0" layoutX="328.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="199.0" />
+    <Text fx:id="form_title" fill="WHITE" fontSmoothingType="LCD" layoutX="379.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-form_title" text="LOGIN" textAlignment="CENTER" wrappingWidth="104.0">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Text>
+</AnchorPane>

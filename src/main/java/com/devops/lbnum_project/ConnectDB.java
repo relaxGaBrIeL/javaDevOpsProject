@@ -37,6 +37,7 @@ public class ConnectDB {
             stmt.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+
         }
     }
 
@@ -53,7 +54,17 @@ public class ConnectDB {
             System.out.println(e.getMessage());
         }
     }
-
+//
+//    public void getUser(int id){
+//        try{
+//            PreparedStatement ps = conn.prepareStatement("SELECT * FROM Users WHERE userID = ?");
+//            ResultSet resultSet = ps.executeQuery();
+//
+//        }catch (SQLException e){
+//           System.out.println(e.getMessage());
+//        }
+//
+//    }
     // Method for closing the connection to the database
     public void closeConnection() {
         try {

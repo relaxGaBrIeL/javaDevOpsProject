@@ -6,6 +6,8 @@ module com.devops.lbnum_project {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires org.mariadb.jdbc;
+    requires jbcrypt;
 
     opens com.devops.lbnum_project to javafx.fxml;
     exports com.devops.lbnum_project;

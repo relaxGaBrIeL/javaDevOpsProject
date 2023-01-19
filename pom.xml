@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>5.8.2</junit.version>
+        <junit.version>5.9.2</junit.version>
     </properties>
 
     <dependencies>
@@ -42,6 +42,11 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.4.0</version>
@@ -62,7 +67,13 @@
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
-            <version>2.7.0</version>
+            <version>3.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>de.nycode</groupId>
+            <artifactId>bcrypt</artifactId>
+            <version>2.3.0</version>
+            <scope>import</scope>
         </dependency>
     </dependencies>
 

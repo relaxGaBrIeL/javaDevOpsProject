@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/schema.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/devops/lbnum_project/ConnectDB.java" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/devops/lbnum_project/Models/Model.java" dialect="MariaDB" />
   </component>
 </project>

@@ -14,3 +14,11 @@
 .home_welcome FontAwesomeIconView {
     -fx-fill: #ECF39E;
 }
+
+.home_welcome_header_bg{
+    -fx-background-color: #AEAEAE;
+}
+
+.home_welcome_menu_bg{
+    -fx-background-color: #D5D5D5;
+}

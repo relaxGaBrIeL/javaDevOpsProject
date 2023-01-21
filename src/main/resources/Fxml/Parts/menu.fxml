@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="467.0" prefWidth="116.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.MenuController">
+   <children>
+      <Rectangle fx:id="accueil_btn" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="47.0" layoutX="15.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="86.0" />
+      <FontAwesomeIconView glyphName="HOME" layoutX="39.0" layoutY="62.0" size="40" />
+      <Text layoutX="39.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accueil" />
+      <Rectangle fx:id="travail_btn" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="47.0" layoutX="15.0" layoutY="104.0" stroke="BLACK" strokeType="INSIDE" width="86.0" />
+      <FontAwesomeIconView glyphName="BRIEFCASE" layoutX="38.0" layoutY="141.0" size="40" />
+      <Text layoutX="41.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travail" />
+      <Rectangle fx:id="groupe_btn" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="47.0" layoutX="15.0" layoutY="180.0" stroke="BLACK" strokeType="INSIDE" width="86.0" />
+      <FontAwesomeIconView glyphName="GROUP" layoutX="36.0" layoutY="217.0" size="40" />
+      <Text layoutX="38.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groupe" />
+      <Rectangle fx:id="calendrier_btn" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="47.0" layoutX="15.0" layoutY="251.0" stroke="BLACK" strokeType="INSIDE" width="86.0" />
+      <FontAwesomeIconView glyphName="CALENDAR" layoutX="39.0" layoutY="288.0" size="40" />
+      <Text layoutX="31.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendrier" />
+      <Rectangle fx:id="dossier_btn" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="47.0" layoutX="15.0" layoutY="320.0" stroke="BLACK" strokeType="INSIDE" width="86.0" />
+      <FontAwesomeIconView fill="#ffdf5f" glyphName="FOLDER" layoutX="38.0" layoutY="357.0" size="40" />
+      <Text layoutX="37.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dossier" />
+      <Text fx:id="memoire_form" layoutX="20.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mémoire :" />
+   </children>
+</AnchorPane>

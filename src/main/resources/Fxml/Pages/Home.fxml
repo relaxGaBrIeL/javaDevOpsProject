@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="462.0" prefWidth="603.0" stylesheets="@../../Styles/home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.HomeController">
+   <children>
+      <AnchorPane layoutY="66.0" prefHeight="416.0" prefWidth="86.0" styleClass="home_welcome_menu_bg">
+         <children>
+            <Text layoutX="24.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accueil" />
+            <Text layoutX="26.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travail" />
+            <Text layoutX="23.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groupe" />
+            <Text layoutX="16.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calendrier" />
+            <Text layoutX="24.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dossier" />
+            <Text fx:id="memoire_form" layoutX="8.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mémoire :" />
+
+            <Button fx:id="accueil_btn" layoutX="9.0" layoutY="14.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0" >
+               <graphic>
+                  <FontAwesomeIconView glyphName="HOME" layoutX="25.0" layoutY="51.0" size="40" />
+               </graphic>
+            </Button>
+            <Button fx:id="travail_btn" layoutX="7.0" layoutY="91.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="70.0" >
+               <graphic>
+                  <FontAwesomeIconView glyphName="BRIEFCASE" layoutX="22.0" layoutY="128.0" size="40" />
+               </graphic>
+            </Button>
+            <Button fx:id="groupe_btn" layoutX="7.0" layoutY="167.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0" >
+               <graphic>
+                  <FontAwesomeIconView glyphName="GROUP" layoutX="20.0" layoutY="204.0" size="40" />
+               </graphic>
+            </Button>
+            <Button fx:id="calendrier_btn" layoutX="8.0" layoutY="237.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0" >
+               <graphic>
+                  <FontAwesomeIconView glyphName="CALENDAR" layoutX="24.0" layoutY="274.0" size="40" />
+               </graphic>
+            </Button>
+            <Button fx:id="dossier_btn" layoutX="6.0" layoutY="307.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="70.0" >
+               <graphic>
+                  <FontAwesomeIconView fill="#ffdf5f" glyphName="FOLDER" layoutX="22.0" layoutY="346.0" size="40" text="" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="603.0" styleClass="home_welcome_header_bg">
+         <children>
+            <Text layoutX="185.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le Bureau Numérique" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <FontAwesomeIconView glyphName="BELL" layoutX="491.0" layoutY="40.0" size="20" />
+            <ToggleButton layoutX="517.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="Off" />
+            <ToggleButton layoutX="557.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="On" />
+            <Circle fill="WHITE" layoutX="45.0" layoutY="33.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
+            <FontAwesomeIconView glyphName="USER" layoutX="27.0" layoutY="50.0" size="50" />
+         </children>
+      </Pane>
+      <Pane fx:id="content_pane" layoutX="86.0" layoutY="66.0" prefHeight="416.0" prefWidth="517.0" />
+   </children>
+</AnchorPane>

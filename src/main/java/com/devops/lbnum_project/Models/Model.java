@@ -35,7 +35,7 @@ public class Model {
             // Iterate over the result set and print the data to the console
             while (rs.next()) {
                 int id = rs.getInt("Id_User");
-                String name = rs.getString("Name");
+                String name = rs.getString("Firstname");
                 String email = rs.getString("Email");
                 String password = rs.getString("Password");
 

@@ -45,16 +45,19 @@ public class Authentication implements Initializable {
         String password = password_field.getText();
         if (Validator.validateEmail(mail)) {
             LoginResponse loginResponse = db.login(mail, password);
-            db.closeConnection();
+
             if (loginResponse.isConnected()) {
                 error_form.setText("connected!");
 //            User user = loginResponse.getUser();
             } else {
                 error_form.setText("no Connected!");
+//                password_field.setText("");
+//                email_field.setText("");
             }
         } else {
             error_form.setText("Mail incorrect !");
         }
+       // db.closeConnection();
     }
 
 
@@ -66,7 +69,7 @@ public class Authentication implements Initializable {
         String fName = fName_field.getText();
         String lName = lastName_field.getText();
 
-        if (!Validator.validateEmail(mail)) {
+        if (Validator.validateEmail(mail)) {
 
             if (mail.isEmpty() || passwordConf.isEmpty() || password.isEmpty() || fName.isEmpty() || lName.isEmpty()) {
                 error_form.setText("Tous les champs doivent être renseigner !");
@@ -76,7 +79,7 @@ public class Authentication implements Initializable {
 
             } else {
                 SignupResponse signupResponse = db.signup(mail, password, fName, lName);
-                db.closeConnection();
+//                db.closeConnection();
                 if (signupResponse.isSuccess()) {
                     error_form.setText(signupResponse.getMessage());
                     email_field.setText("");
@@ -92,6 +95,7 @@ public class Authentication implements Initializable {
         } else {
             error_form.setText("Email non valide");
         }
+        db.closeConnection();
     }
 
     @Override

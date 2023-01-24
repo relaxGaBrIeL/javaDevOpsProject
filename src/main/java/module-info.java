@@ -14,5 +14,6 @@ module com.devops.lbnum_project {
     exports com.devops.lbnum_project.Controllers;
     exports com.devops.lbnum_project.Models;
     exports com.devops.lbnum_project.Views;
+    exports com.devops.lbnum_project.Controllers.socket;
 
 }

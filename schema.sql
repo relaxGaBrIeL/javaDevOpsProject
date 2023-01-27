@@ -18,7 +18,8 @@ CREATE TABLE Messages(
                          FOREIGN KEY(Id_User_1) REFERENCES Users(Id_User)
 );
 
-CREATE TABLE Groups(
+CREATE TABLE `Groups`
+(
                        Id_Group INT AUTO_INCREMENT,
                        Name VARCHAR(255) NOT NULL,
                        PRIMARY KEY(Id_Group)
@@ -31,7 +32,7 @@ CREATE TABLE GroupMessages(
                               Id_Group INT NOT NULL,
                               PRIMARY KEY(Id_GroupMessage),
                               FOREIGN KEY(Id_User) REFERENCES Users(Id_User),
-                              FOREIGN KEY(Id_Group) REFERENCES Groups(Id_Group)
+                              FOREIGN KEY(Id_Group) REFERENCES `Groups` (Id_Group)
 );
 
 CREATE TABLE GroupAttachements(
@@ -69,6 +70,19 @@ CREATE TABLE GroupMembers(
                              Role VARCHAR(255),
                              IsOwner BOOLEAN NOT NULL,
                              PRIMARY KEY(Id_Group, Id_User),
-                             FOREIGN KEY(Id_Group) REFERENCES Groups(Id_Group),
+                             FOREIGN KEY(Id_Group) REFERENCES `Groups` (Id_Group),
                              FOREIGN KEY(Id_User) REFERENCES Users(Id_User)
 );
+
+
+ALTER TABLE Attachements
+    ADD date TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Attachements
+    ADD date TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Tasks
+    ADD date TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE Messages
+    ADD date TIMESTAMP DEFAULT CURRENT_TIMESTAMP;

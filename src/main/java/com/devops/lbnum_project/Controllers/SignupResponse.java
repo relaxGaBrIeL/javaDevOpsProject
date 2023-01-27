@@ -1,7 +1,11 @@
 package com.devops.lbnum_project.Controllers;
 
+import com.devops.lbnum_project.Controllers.socket.SocketConnection;
+
+import java.io.IOException;
+
 public class SignupResponse {
-    private boolean success;
+    private final boolean success;
     private final User user;
     private final String message;
 
@@ -12,6 +16,13 @@ public class SignupResponse {
     }
 
     public boolean isSuccess() {
+        if (success) {
+            try {
+                SocketConnection socketConnection = new SocketConnection();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         return success;
     }
 

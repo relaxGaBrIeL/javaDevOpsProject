@@ -51,7 +51,7 @@ public class Authentication implements Initializable {
         String password = password_field.getText();
         if (Validator.validateEmail(mail)) {
             LoginResponse loginResponse = db.login(mail, password);
-            db.closeConnection();
+
             if (loginResponse.isConnected()) {
                 msg_form.setText("connected!");
                 connected = true;
@@ -85,7 +85,7 @@ public class Authentication implements Initializable {
 
             } else {
                 SignupResponse signupResponse = db.signup(mail, password, fName, lName);
-                db.closeConnection();
+//                db.closeConnection();
                 if (signupResponse.isSuccess()) {
                     msg_form.setText(signupResponse.getMessage());
                     email_field.setText("");
@@ -103,6 +103,7 @@ public class Authentication implements Initializable {
             msg_form.setText("Email non valide");
         }
         return connected;
+        db.closeConnection();
     }
 
     @Override

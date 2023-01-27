@@ -6,8 +6,8 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../../Styles/authentification.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.Authentication">
-    <VBox layoutX="-4.0" prefHeight="400.0" prefWidth="200.0" styleClass="login-logo_container" stylesheets="@../../Styles/authentification.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane fx:id="app_content" prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../../../../../Styles/authentification.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.Authentication">
+    <VBox layoutX="-4.0" prefHeight="400.0" prefWidth="200.0" styleClass="login-logo_container" stylesheets="@../../../../../Styles/authentification.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <FontAwesomeIconView glyphName="HOME" size="50" />
         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BUREAU NUMERIQUE" textAlignment="CENTER" wrappingWidth="232.8828125">
             <font>

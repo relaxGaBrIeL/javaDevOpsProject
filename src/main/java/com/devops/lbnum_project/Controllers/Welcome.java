@@ -6,41 +6,36 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class HomeController implements Initializable {
-
-
-    public Text memoire_form;
-
-    public Pane content_pane;
-    public Button accueil_btn;
-    public Button travail_btn;
-    public Button groupe_btn;
-    public Button calendrier_btn;
-    public Button dossier_btn;
-    public AnchorPane app_content;
-    public Button login_button;
+public class Welcome implements Initializable {
     public Button sign_button;
-
-
+    public Button login_button;
+    public AnchorPane app_content;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    //Les scene
-        accueil_btn.setOnAction(actionEvent -> {
+        //autres boutons
+        login_button.setOnAction(actionEvent -> {
+
             try {
-                ViewFactory.getScene(content_pane,"Login");
+                ViewFactory.getPage(app_content,"Login");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
         });
+        sign_button.setOnAction(actionEvent -> {
+            try {
+                ViewFactory.getPage(app_content,"Register");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
-
+        });
     }
 }

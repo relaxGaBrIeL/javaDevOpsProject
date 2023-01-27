@@ -9,10 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="462.0" prefWidth="603.0" stylesheets="@../../Styles/home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.HomeController">
-   <children>
+<AnchorPane fx:id="app_content" prefHeight="462.0" prefWidth="603.0" stylesheets="@../../../../../Styles/home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.HomeController">
+
       <AnchorPane layoutY="66.0" prefHeight="416.0" prefWidth="86.0" styleClass="home_welcome_menu_bg">
-         <children>
             <Text layoutX="24.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accueil" />
             <Text layoutX="26.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Travail" />
             <Text layoutX="23.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groupe" />
@@ -45,11 +44,9 @@
                   <FontAwesomeIconView fill="#ffdf5f" glyphName="FOLDER" layoutX="22.0" layoutY="346.0" size="40" text="" />
                </graphic>
             </Button>
-         </children>
       </AnchorPane>
 
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="66.0" prefWidth="603.0" styleClass="home_welcome_header_bg">
-         <children>
             <Text layoutX="185.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le Bureau Numérique" textAlignment="CENTER">
                <font>
                   <Font size="24.0" />
@@ -60,8 +57,7 @@
             <ToggleButton layoutX="557.0" layoutY="21.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="40.0" text="On" />
             <Circle fill="WHITE" layoutX="45.0" layoutY="33.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
             <FontAwesomeIconView glyphName="USER" layoutX="27.0" layoutY="50.0" size="50" />
-         </children>
       </Pane>
       <Pane fx:id="content_pane" layoutX="86.0" layoutY="66.0" prefHeight="416.0" prefWidth="517.0" />
-   </children>
+
 </AnchorPane>

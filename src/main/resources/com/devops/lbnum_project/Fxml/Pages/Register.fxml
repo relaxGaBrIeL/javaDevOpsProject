@@ -6,7 +6,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="484.0" prefWidth="594.0" styleClass="login_container" stylesheets="@../../Styles/authentification.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.devops.lbnum_project.Controllers.Authentication">
+<AnchorPane fx:id="app_content" prefHeight="484.0" prefWidth="594.0" styleClass="login_container" stylesheets="@../../../../../Styles/authentification.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.Authentication">
 
     <VBox layoutX="-4.0" prefHeight="400.0" prefWidth="200.0" styleClass="login-logo_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <FontAwesomeIconView glyphName="HOME" size="50" />
@@ -28,7 +28,7 @@
         <Label text="Confirmer le mot de passe" />
         <PasswordField fx:id="cPassword_field" styleClass="input_field" />
         <Button fx:id="register_btn" alignment="CENTER"  contentDisplay="CENTER" mnemonicParsing="false" prefHeight="32.0" prefWidth="286.0" styleClass="btn" text="S'inscrire" textAlignment="CENTER" textFill="#efe5e5" />
-        <Label fx:id="error_form" styleClass="error_lbl" text="Error" />
+        <Label fx:id="msg_form" styleClass="error_lbl" text="Error" />
         <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="59.0" prefWidth="343.0" styleClass="btn" text="Se connecter" textFill="WHITE" />
     </VBox>
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#132a13" height="44.0" layoutX="301.0" layoutY="18.0" stroke="BLACK" strokeType="INSIDE" width="243.0" />

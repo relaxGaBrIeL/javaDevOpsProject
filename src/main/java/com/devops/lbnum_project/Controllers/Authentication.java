@@ -103,7 +103,6 @@ public class Authentication implements Initializable {
             msg_form.setText("Email non valide");
         }
         return connected;
-        db.closeConnection();
     }
 
     @Override

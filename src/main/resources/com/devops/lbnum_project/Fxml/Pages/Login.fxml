@@ -21,7 +21,7 @@
         <Label text="Password :" />
       <PasswordField fx:id="password_field" styleClass="input_field" />
         <Button fx:id="login_btn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Connexion" textAlignment="CENTER" textFill="#efe5e5" />
-        <Label fx:id="error_form" styleClass="error_lbl" text="Error" />
+        <Label fx:id="msg_form" styleClass="error_lbl" text="Error" />
         <Button fx:id="register_btn" mnemonicParsing="false" text="S'inscrire" textFill="WHITE" />
     </VBox>
     <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#132a13" height="44.0" layoutX="328.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="199.0" />

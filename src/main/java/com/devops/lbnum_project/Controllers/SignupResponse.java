@@ -18,7 +18,7 @@ public class SignupResponse {
     public boolean isSuccess() {
         if (success) {
             try {
-                SocketConnection socketConnection = new SocketConnection();
+                SocketConnection socketConnection = new SocketConnection(getUser());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

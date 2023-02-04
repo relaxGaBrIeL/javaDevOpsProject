@@ -36,31 +36,29 @@ public class Server {
      * */
     public void addClient(ConnectedUser client) throws IOException {
         this.users.add(client);
-        Message msg = new Message(String.format("%s vient de se connecter", client.getId()), String.valueOf(client.getId()));
+        Message msg = new Message(String.format("%s vient de se connecter", client.getId()));
         this.broadcastMessage(msg,client.getId());
     }
 
     /**
      * Allow to send a message for all clients
-     * */
-    public int broadcastMessage(Message message, int id) throws IOException {
+     */
+    public void broadcastMessage(Message message, int id) throws IOException {
         for(ConnectedUser user : this.users){
             if(user.getId() != id){
                 user.sendMessage(message);
             }
         }
-        return 0;
     }
 
     /**
      * For disconnect user of the server
-     * */
-    public ConnectedUser disconnectedClient(ConnectedUser user) throws IOException {
+     */
+    public void disconnectedClient(ConnectedUser user) throws IOException {
         user.closeClient();
         this.users.remove(user);
-        Message msg = new Message(String.format("%s c'est déconnecté",user.getId()), String.valueOf(user.getId()));
+        Message msg = new Message(String.format("%s s'est déconnecté",user.getId()), String.valueOf(user.getId()));
         this.broadcastMessage(msg,user.getId());
-        return user;
     }
 
 

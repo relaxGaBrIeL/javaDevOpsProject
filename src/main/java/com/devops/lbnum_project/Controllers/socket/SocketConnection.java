@@ -1,6 +1,7 @@
 package com.devops.lbnum_project.Controllers.socket;
 
 import com.devops.lbnum_project.Controllers.Message;
+import com.devops.lbnum_project.Controllers.User;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,6 +10,7 @@ import java.net.Socket;
 
 public class SocketConnection {
 
+    private final User user;
     //region Attributes
     private int port;
     private String address;
@@ -30,6 +32,10 @@ public class SocketConnection {
         return address;
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -43,20 +49,21 @@ public class SocketConnection {
     }
     //endregion
 
-    public SocketConnection() throws IOException {
+    public SocketConnection(User user) throws IOException {
 
         this.port = 1025;
         this.address = "127.0.0.1";
         this.socket = new Socket(address,port);
         this.out = new ObjectOutputStream(socket.getOutputStream());
+        this.user = user;
 
         Thread threadClientReceive = new Thread(new Receive(this,this.socket));
         threadClientReceive.start();
 
-        Thread threadClientSend = new Thread(new Send(this.socket,this.out));
+        Thread threadClientSend = new Thread(new Send(this.socket,this.out, user));
         threadClientSend.start();
 
-        System.out.println("Vous êtes Connected sur l'adresse : "+ this.address+"\n Sur le port : "+ this.port);
+        System.out.println(user.getFname() +" Vous êtes Connected sur l'adresse : "+ this.address+"\n Sur le port : "+ this.port);
     }
 
     /**
@@ -69,8 +76,9 @@ public class SocketConnection {
             this.socket.close();
             System.exit(0);
         }
-        else
+        else {
             System.out.println("disconnectedServer : Erreur les attributs in, out ou socket sont null");
+        }
     }
 
     /**

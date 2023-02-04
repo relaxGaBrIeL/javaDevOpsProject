@@ -1,6 +1,7 @@
 package com.devops.lbnum_project.Controllers.socket;
 
 import com.devops.lbnum_project.Controllers.Message;
+import com.devops.lbnum_project.Controllers.User;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -10,9 +11,17 @@ import java.util.Scanner;
 
 public class Send implements  Runnable{
     private final ObjectOutputStream out;
+    private final Socket socket;
+    public User getUser() {
+        return user;
+    }
 
-    public Send(Socket socket, ObjectOutputStream out){
+    private final User user;
+
+    public Send(Socket socket, ObjectOutputStream out, User user){
+        this.socket = socket;
         this.out = out;
+        this.user = user;
     }
 
     @Override
@@ -24,7 +33,7 @@ public class Send implements  Runnable{
             try {
                 System.out.println("Votre message >> ");
                 String m= sc.nextLine();
-                Message message = new Message(m,"client");
+                Message message = new Message(m, user.getFname());
                 if(Objects.equals(m, "bye") || Objects.equals(m, "exit")){
                     System.exit(0);
                 }

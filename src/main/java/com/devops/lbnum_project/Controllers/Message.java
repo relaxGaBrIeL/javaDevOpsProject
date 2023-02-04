@@ -12,11 +12,17 @@ public class Message implements Serializable {
     private String sender, content;
 
 
-    public Message(String sender, String content) {
+
+    public Message(String content) {
+        this.content = content;
+    }
+
+    public Message( String content,String sender) {
 
         this.sender = sender;
         this.content = content;
     }
+
     public String getContent() {
         return content;
     }
@@ -32,8 +38,13 @@ public class Message implements Serializable {
     public void setSender(String sender) {
         this.sender = sender;
     }
+
     @Override
     public String toString() {
-        return  this.getSender() + this.getContent() ;
+        if (getContent() != null && getSender() !=null){
+            return String.format("%s : %s", this.getSender(), this.getContent());
+        }else {
+            return getContent();
+        }
     }
 }

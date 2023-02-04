@@ -55,9 +55,10 @@ public class Authentication implements Initializable {
             if (loginResponse.isConnected()) {
                 msg_form.setText("connected!");
                 connected = true;
+
 //            User user = loginResponse.getUser();
             } else {
-                msg_form.setText("no Connected!");
+                msg_form.setText("mot de passe invalid!");
             }
         } else {
             msg_form.setText("Mail incorrect !");

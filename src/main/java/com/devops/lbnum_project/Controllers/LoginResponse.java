@@ -16,7 +16,7 @@ public class LoginResponse {
     public boolean isConnected() {
         if (connected) {
             try {
-                SocketConnection socketConnection = new SocketConnection();
+                SocketConnection socketConnection = new SocketConnection(getUser());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

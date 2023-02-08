@@ -12,8 +12,11 @@ public class App extends Application {
         Scene scene = new Scene(fxmlLoader.load());
 
         stage.setScene(scene);
+        stage.setMinHeight(450);        //  Val min et max des dimensions de la fenêtre
+        stage.setMinWidth(650);         //
         stage.show();
     }
+
 
 
 }

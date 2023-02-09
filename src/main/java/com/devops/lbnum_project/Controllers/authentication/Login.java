@@ -1,5 +1,6 @@
 package com.devops.lbnum_project.Controllers.authentication;
 
+import com.devops.lbnum_project.Models.DAOUser;
 import com.devops.lbnum_project.Models.Model;
 import com.devops.lbnum_project.Models.Validator;
 import com.devops.lbnum_project.Views.ViewFactory;
@@ -18,7 +19,7 @@ public class Login {
     public Text msg_form;
     public Button retour_btn;
 
-    Model db = new Model();
+    DAOUser db = new DAOUser();
 
 
     /**

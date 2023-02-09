@@ -1,12 +1,15 @@
 import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
 import com.devops.lbnum_project.Controllers.User;
+import com.devops.lbnum_project.Models.DAOUser;
 import com.devops.lbnum_project.Models.Model;
+
+import java.util.List;
 
 public class TestDB {
     public static void main(String[] args) {
 //        // Create a com.devops.project.ConnectDB object
         //ConnectDB db = new ConnectDB();
-        Model db = new Model();
+       // Model db = new Model();
 
 
 //        // Execute a SELECT query and process the results
@@ -45,14 +48,27 @@ public class TestDB {
             Login
          */
 
-        LoginResponse loginResponse = db.login("john@gmail.com","John");
-        db.closeConnection();
-        if (loginResponse.isConnected()) {
-            User user = loginResponse.getUser();
-            System.out.println(user.getFname() +" "+ user.getLname());
-            // user.getFname() will have the firstname, user.getLname() will have the lastname, user.getEmail() will have the email
-        }else {
-            System.out.println("non");
+//        LoginResponse loginResponse = db.login("john@gmail.com","John");
+//        db.closeConnection();
+//        if (loginResponse.isConnected()) {
+//            User user = loginResponse.getUser();
+//            System.out.println(user.getFname() +" "+ user.getLname());
+//            // user.getFname() will have the firstname, user.getLname() will have the lastname, user.getEmail() will have the email
+//        }else {
+//            System.out.println("non");
+//        }
+
+        DAOUser DB  = new DAOUser();
+        List<User> users = DB.getUsers();
+        for (User user: users
+             ) {
+            //System.out.println(user.getFname());
+
+            System.out.println("Lastname : " + user.getLname());
+            System.out.println("Firstname : " + user.getFname());
+            System.out.println("Email : " + user.getEmail());
+
+            System.out.println("-----------------------------");
         }
 
 

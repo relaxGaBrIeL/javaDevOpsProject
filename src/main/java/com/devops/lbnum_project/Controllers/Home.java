@@ -21,4 +21,5 @@ public class Home {
         //TODO : mettre à jour le statut de l'utilisateur
         ViewFactory.setPage("Login", event);
     }
+
 }

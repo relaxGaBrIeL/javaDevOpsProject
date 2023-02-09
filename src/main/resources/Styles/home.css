@@ -1,11 +1,10 @@
 .home_welcome{
-    -fx-background-color: #123A13;
+    -fx-background-color: #6A6657;
     -fx-spacing: 15;
 }
 .home_welcome Button{
-    -fx-background-color: #074be0;
-    -fx-fill: #FFFFFF;
-    -fx-font-size: 1.2em;
+    -fx-background-color: #FFFFFF;
+    -fx-font-size: 25px;
 }
 .home_welcome Button:hover{
     -fx-cursor: hand;

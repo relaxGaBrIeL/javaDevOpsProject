@@ -8,7 +8,7 @@ public class ConnectDB {
     public ConnectDB() {
         try {
             // Establish connection to MariaDB database
-            conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/devopsLBN", "root", "admin");
+            conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/devopsLBN", "admin", "admin");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

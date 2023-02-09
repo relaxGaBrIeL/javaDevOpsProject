@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.Controllers.authentication;
 
 import com.devops.lbnum_project.Models.Model;
 import com.devops.lbnum_project.Models.Validator;

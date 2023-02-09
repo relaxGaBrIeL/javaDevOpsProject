@@ -88,7 +88,7 @@
       </graphic>
     </Button>
 
-    <Button fx:id="deconnexion_btn" onAction="#deconnexion" alignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+    <Button fx:id="logout_btn" onAction="#logout" alignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER">
       <graphic>
         <FontAwesomeIconView glyphName="ANCHOR" />
       </graphic>

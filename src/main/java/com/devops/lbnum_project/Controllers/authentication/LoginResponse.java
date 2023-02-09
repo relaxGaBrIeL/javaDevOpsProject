@@ -1,5 +1,6 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.Controllers.authentication;
 
+import com.devops.lbnum_project.Controllers.User;
 import com.devops.lbnum_project.Controllers.socket.SocketConnection;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ public class LoginResponse {
     public boolean isConnected() {
         if (connected) {
             try {
-                SocketConnection socketConnection = new SocketConnection(getUser());
+                 new SocketConnection();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -27,10 +28,5 @@ public class LoginResponse {
     public User getUser() {
         return user;
     }
-
-
-
-
-
 
 }

@@ -13,10 +13,10 @@ public class Home {
     public Button calendrier_btn;
     public Button dossier_btn;
     public Button notifs_btn;
-    public Button deconnexion_btn;
+    public Button logout_btn;
 
 
-    public void deconnexion(ActionEvent event) throws IOException {
+    public void logout(ActionEvent event) throws IOException {
 
         //TODO : mettre à jour le statut de l'utilisateur
         ViewFactory.setPage("Login", event);

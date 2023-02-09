@@ -2,10 +2,7 @@ package com.devops.server;
 
 import com.devops.lbnum_project.Controllers.Message;
 
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
 
@@ -31,23 +28,40 @@ public class ConnectedUser implements Runnable {
         this.server = server;
         this.socket = socket;
         this.out = new ObjectOutputStream(socket.getOutputStream());
-
         System.out.println("Nouvelle connexion, id = " + this.getId());
         idCounter++;
     }
 
     /**
      * Allow to send a message
-     * */
-    public Message sendMessage(Message mess) throws IOException {
-        this.out.writeObject(mess);
-        this.out.flush();
-        return mess;
+     */
+    public void sendMessageToClient(String messageToSend) {
+        try {
+            this.out.writeObject(messageToSend);
+            this.out.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erreur d'envoi de message au client");
+            closeEverything(socket,out,in);
+        }
+    }
+
+    public void closeEverything(Socket socket, OutputStream out, InputStream in) {
+        try {
+            if (in != null)
+                in.close();
+            if (out != null)
+                out.close();
+            if (socket != null)
+                socket.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * Close all input and output and Socket
-     * */
+     */
     public void closeClient() throws IOException {
         this.in.close();
         this.out.close();
@@ -60,20 +74,19 @@ public class ConnectedUser implements Runnable {
             this.in = new ObjectInputStream(socket.getInputStream());
             boolean isActive = true;
 
-            while(isActive){
-                Message mess = (Message)in.readObject();
-                if(mess != null){
-                    mess.setSender(String.valueOf(getId()));
-                    server.broadcastMessage(mess,getId());
-                }
-                else{
+            while (isActive) {
+               String mess = (String) in.readObject();
+                if (mess != null) {
+                    server.broadcastMessage(mess, getId());
+                } else {
                     isActive = false;
                     server.disconnectedClient(this);
                 }
             }
-        } catch (SocketException | EOFException exception){
+        } catch (SocketException | EOFException exception) {
             try {
                 server.disconnectedClient(this);
+                closeEverything(socket,out,in);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }

@@ -2,24 +2,24 @@ package com.devops.lbnum_project.Controllers;
 
 
 public class User {
-    private final String fname;
-    private final String lname;
+    private final String fName;
+    private final String lName;
     private final String email;
 
 
-    public User(String fname, String lname, String email) {
-        this.fname = fname;
-        this.lname = lname;
+    public User(String fName, String lName, String email) {
+        this.fName = fName;
+        this.lName = lName;
         this.email = email;
 
     }
 
     public String getFname() {
-        return fname;
+        return fName;
     }
 
     public String getLname() {
-        return lname;
+        return lName;
     }
 
     public String getEmail() {

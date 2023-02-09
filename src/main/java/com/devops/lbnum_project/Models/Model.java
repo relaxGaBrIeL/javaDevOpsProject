@@ -1,8 +1,8 @@
 package com.devops.lbnum_project.Models;
 
-import com.devops.lbnum_project.Controllers.SignupResponse;
+import com.devops.lbnum_project.Controllers.authentication.SignupResponse;
 import com.devops.lbnum_project.Controllers.User;
-import com.devops.lbnum_project.Controllers.LoginResponse;
+import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;

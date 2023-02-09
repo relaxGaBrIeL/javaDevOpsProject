@@ -1,11 +1,6 @@
-import com.devops.lbnum_project.ConnectDB;
-import com.devops.lbnum_project.Controllers.LoginResponse;
-import com.devops.lbnum_project.Controllers.SignupResponse;
+import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
 import com.devops.lbnum_project.Controllers.User;
 import com.devops.lbnum_project.Models.Model;
-import com.devops.lbnum_project.Models.Validator;
-
-import java.util.Map;
 
 public class TestDB {
     public static void main(String[] args) {

@@ -1,12 +1,13 @@
-.home_welcome{
-    -fx-background-color: #6A6657;
+GridPane{
+    -fx-background-color: #b5ab72;
     -fx-spacing: 15;
 }
 .home_welcome Button{
     -fx-background-color: #FFFFFF;
     -fx-font-size: 25px;
+    -fx-background-radius: 30 0 30 0;
 }
-.home_welcome Button:hover{
+Button:hover{
     -fx-cursor: hand;
 }
 
@@ -14,10 +15,25 @@
     -fx-fill: #ECF39E;
 }
 
-.home_welcome_header_bg{
+.home_header_bg{
     -fx-background-color: #AEAEAE;
 }
 
-.home_welcome_menu_bg{
+.home_menu_bg{
     -fx-background-color: #D5D5D5;
+}
+
+.home {
+}
+
+.login Button{
+    -fx-background-color: #587B7F;
+    -fx-font-size: 25px;
+    -fx-background-radius: 30 30 30 30;
+}
+
+.register Button{
+    -fx-background-color: #587B7F;
+    -fx-font-size: 25px;
+    -fx-background-radius: 30 30 30 30;
 }

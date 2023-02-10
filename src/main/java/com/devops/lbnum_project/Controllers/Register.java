@@ -71,7 +71,7 @@ public class Register {
     }
 
     //Redirection vers Welcome
-    public void retourWelcome(ActionEvent event) throws IOException {
+    public void returnWelcome(ActionEvent event) throws IOException {
         ViewFactory.setPage("Welcome", event);
     }
 }

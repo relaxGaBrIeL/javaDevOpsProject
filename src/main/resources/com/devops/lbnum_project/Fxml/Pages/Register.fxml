@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.Register">
+<GridPane prefHeight="800.0"
+          prefWidth="1150.0"
+          stylesheets="@../../../../../Styles/home.css"
+          styleClass="register"
+          xmlns="http://javafx.com/javafx/17.0.2-ea"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.devops.lbnum_project.Controllers.Register">
 
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
@@ -26,55 +28,74 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
 
-    <FontAwesomeIconView glyphName="HOME" size="50" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
 
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bureau Numérique" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
         <font>
-            <Font size="23.0" />
+            <Font size="30.0" />
         </font>
     </Text>
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Créer mon espace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
       <font>
-         <Font size="21.0" />
+         <Font size="25.0" />
       </font>
    </Text>
 
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
-   <TextField fx:id="fName_field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Text>
+   <TextField fx:id="fName_field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" promptText="Dupont">
       <GridPane.margin>
          <Insets right="10.0" />
       </GridPane.margin>
    </TextField>
 
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-   <TextField fx:id="lastName_field" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+       <font>
+           <Font size="20.0" />
+       </font>
+   </Text>
+   <TextField fx:id="lastName_field" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" promptText="Jean">
       <GridPane.margin>
          <Insets right="10.0" />
       </GridPane.margin>
    </TextField>
 
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail :" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="TOP" />
-   <TextField fx:id="email_field" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail :" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+       <font>
+           <Font size="20.0" />
+       </font>
+   </Text>
+   <TextField fx:id="email_field" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" promptText="jean.dupont@mail.com">
       <GridPane.margin>
          <Insets right="10.0" />
       </GridPane.margin>
    </TextField>
 
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe :" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP" />
-   <TextField fx:id="password_field" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe :" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+       <font>
+           <Font size="20.0" />
+       </font>
+   </Text>
+   <TextField fx:id="password_field" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" promptText="password">
       <GridPane.margin>
          <Insets right="10.0" />
       </GridPane.margin>
    </TextField>
 
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation mot de passe :" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="TOP" />
-   <TextField fx:id="cPassword_field" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation mot de passe :" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+       <font>
+           <Font size="20.0" />
+       </font>
+   </Text>
+   <TextField fx:id="cPassword_field" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" promptText="password">
       <GridPane.margin>
          <Insets right="10.0" />
       </GridPane.margin>
    </TextField>
 
-   <Text fx:id="msg_form" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="TOP" />
+   <Text fx:id="msg_form" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
    <Button fx:id="register_btn" onAction="#register" prefHeight="20.0" prefWidth="419.0" text="S'inscrire" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
       <font>
          <Font size="15.0" />
@@ -84,6 +105,10 @@
       </GridPane.margin>
    </Button>
 
-   <Button onAction="#retourWelcome" mnemonicParsing="false" text="Retour" />
+   <Button mnemonicParsing="false" onAction="#returnWelcome" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+       <graphic>
+           <FontAwesomeIconView glyphName="HOME" size="50" />
+       </graphic>
+   </Button>
 
 </GridPane>

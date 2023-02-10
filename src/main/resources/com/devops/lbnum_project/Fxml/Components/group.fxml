@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane fx:id="app_content" prefHeight="516.0" prefWidth="590.0" GridPane.columnIndex="1" GridPane.rowIndex="1" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.ContactList">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <VBox fx:id="userList"  prefHeight="346.0" prefWidth="259.0"  />
+    <VBox fx:id="msg" prefHeight="516.0" prefWidth="177.0" GridPane.columnIndex="1">
+        <Label layoutX="114" layoutY="26" prefHeight="56.0" prefWidth="291.0" text="Name of user          " />
+        <ScrollPane fx:id="sp_main" fitToWidth="true" layoutX="30" layoutY="70" prefHeight="419.0" prefWidth="295.0">
+            <content>
+                <VBox fx:id="vbox_messages" prefHeight="273.0" prefWidth="280.0" />
+
+            </content>
+        </ScrollPane>
+        <Button fx:id="btn_send" layoutX="398.0" layoutY="338.0" prefHeight="34.0" prefWidth="291.0" text="Send">
+         <graphic>
+              <TextField fx:id="tf_message" prefHeight="26" prefWidth="222.0" />
+         </graphic></Button>
+    </VBox>
+</GridPane>

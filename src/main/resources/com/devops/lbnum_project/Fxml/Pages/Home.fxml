@@ -74,7 +74,7 @@
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     </columnConstraints>
 
-    <FontAwesomeIconView glyphName="USER" size="50" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
+    <FontAwesomeIconView fx:id="profil" glyphName="USER" size="50" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
 
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Bureau Numérique" textAlignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER">
       <font>
@@ -88,18 +88,28 @@
       </graphic>
     </Button>
 
-    <Button fx:id="logout_btn" onAction="#logout" alignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+    <Button fx:id="logout_btn" alignment="CENTER" onAction="#logout" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER">
       <graphic>
         <FontAwesomeIconView glyphName="ANCHOR" />
       </graphic>
     </Button>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
 
   </GridPane>
+   <GridPane fx:id="app_content" GridPane.columnIndex="1" GridPane.rowIndex="1">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+   </GridPane>
 
 
-
-
-
+<!--  Content here-->
 
 
 </GridPane>

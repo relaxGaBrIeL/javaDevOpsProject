@@ -1,5 +1,6 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.Controllers.authentication;
 
+import com.devops.lbnum_project.Models.DAOUser;
 import com.devops.lbnum_project.Models.Model;
 import com.devops.lbnum_project.Models.Validator;
 import com.devops.lbnum_project.Views.ViewFactory;
@@ -21,7 +22,7 @@ public class Register {
     public TextField fName_field;
     public Text msg_form;
 
-    Model db = new Model();
+   DAOUser db = new DAOUser();
 
     /**
      * Fonction qui permet de créer un nouvel utilisateur après avoir vérifié que le formulaire soit conforme

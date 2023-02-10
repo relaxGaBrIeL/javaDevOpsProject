@@ -10,6 +10,7 @@ public class Message implements Serializable {
     @Serial
     private static final long serialVersionUID = 4632638763453902255L;
     private String sender, content;
+    private int userId;
 
 
 
@@ -20,6 +21,10 @@ public class Message implements Serializable {
     public Message( String content,String sender) {
 
         this.sender = sender;
+        this.content = content;
+    }
+    public Message( String content,int userId) {
+        this.userId = userId;
         this.content = content;
     }
 

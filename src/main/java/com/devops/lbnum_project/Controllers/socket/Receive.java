@@ -24,7 +24,7 @@ public class Receive implements Runnable{
             while(isActive){
                 Message mess = (Message) in.readObject();
                 if(mess != null){
-                    this.client.messageReceived(mess);
+                   // this.client.messageReceived(mess);
                 }
                 else{
                     isActive = false;

@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="467.0" prefWidth="116.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.MenuController">
+<AnchorPane prefHeight="467.0" prefWidth="116.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Rectangle fx:id="accueil_btn" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="47.0" layoutX="15.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="86.0" />
       <FontAwesomeIconView glyphName="HOME" layoutX="39.0" layoutY="62.0" size="40" />

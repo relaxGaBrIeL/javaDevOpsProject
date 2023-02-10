@@ -1,13 +1,10 @@
 package com.devops.server;
 
-import com.devops.lbnum_project.Controllers.Message;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Server {
-
 
     private final List<ConnectedUser> users;
     private final int port;
@@ -17,7 +14,7 @@ public class Server {
     }
 
     public Server(int port) throws IOException {
-        this.users = new ArrayList<ConnectedUser>();
+        this.users = new ArrayList<>();
         this.port = port;
 
         Thread threadConnection = new Thread(new Connection(this));
@@ -36,17 +33,17 @@ public class Server {
      * */
     public void addClient(ConnectedUser client) throws IOException {
         this.users.add(client);
-        Message msg = new Message(String.format("%s vient de se connecter", client.getId()));
+        String msg =  client.getId() +" vient de se connecter";
         this.broadcastMessage(msg,client.getId());
     }
 
     /**
      * Allow to send a message for all clients
      */
-    public void broadcastMessage(Message message, int id) throws IOException {
+    public void broadcastMessage(String message, int id) throws IOException {
         for(ConnectedUser user : this.users){
             if(user.getId() != id){
-                user.sendMessage(message);
+                user.sendMessageToClient(message);
             }
         }
     }
@@ -57,7 +54,7 @@ public class Server {
     public void disconnectedClient(ConnectedUser user) throws IOException {
         user.closeClient();
         this.users.remove(user);
-        Message msg = new Message(String.format("%s s'est déconnecté",user.getId()), String.valueOf(user.getId()));
+        String msg =user.getId()+ " s'est déconnecté";
         this.broadcastMessage(msg,user.getId());
     }
 

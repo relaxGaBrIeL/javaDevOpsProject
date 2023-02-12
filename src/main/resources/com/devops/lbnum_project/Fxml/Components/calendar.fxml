@@ -14,5 +14,5 @@
         <RowConstraints maxHeight="195.4" minHeight="0.0" prefHeight="43.6" vgrow="SOMETIMES"/>
         <RowConstraints maxHeight="400.8" minHeight="10.0" prefHeight="356.4" vgrow="SOMETIMES"/>
     </rowConstraints>
-    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Calendrier"/>
+
 </GridPane>

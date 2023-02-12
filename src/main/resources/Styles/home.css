@@ -11,21 +11,6 @@ Button:hover{
     -fx-cursor: hand;
 }
 
-.home_welcome FontAwesomeIconView {
-    -fx-fill: #ECF39E;
-}
-
-.home_header_bg{
-    -fx-background-color: #AEAEAE;
-}
-
-.home_menu_bg{
-    -fx-background-color: #D5D5D5;
-}
-
-.home {
-}
-
 .login Button{
     -fx-background-color: #587B7F;
     -fx-font-size: 25px;
@@ -36,4 +21,23 @@ Button:hover{
     -fx-background-color: #587B7F;
     -fx-font-size: 25px;
     -fx-background-radius: 30 30 30 30;
+}
+
+.retourWelcome {
+    -fx-background-color: white;
+}
+
+.home Button{
+    -fx-background-color: #474747;
+    -fx-font-size: 15px;
+}
+
+.home_haut {
+    -fx-background-color: #474747;
+}
+
+.dashboard VBox{
+    -fx-border-image-width: 2;
+    -fx-border-color: black;
+    -fx-border-radius: 20 20 20 20;
 }

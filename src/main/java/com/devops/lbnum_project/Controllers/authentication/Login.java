@@ -53,6 +53,8 @@ public class Login {
 
     //Redirection vers Home suite à la vérification de l'existence du compte
     public void connexion(ActionEvent event) throws IOException {
-        if (handleLoginSubmit()) ViewFactory.setPage("Home", event);
+        if (handleLoginSubmit()) {
+            ViewFactory.setPage("Home", event);
+        }
     }
 }

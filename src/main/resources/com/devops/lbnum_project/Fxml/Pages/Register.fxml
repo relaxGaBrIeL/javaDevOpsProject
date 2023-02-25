@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane minHeight="560.0" minWidth="700.0" styleClass="register" stylesheets="@../../../../../Styles/home.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.authentication.Register">
+<GridPane minHeight="560.0" minWidth="700.0" styleClass="register" stylesheets="@../../../../../Styles/styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.authentication.Register">
 
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" prefWidth="250.0" />

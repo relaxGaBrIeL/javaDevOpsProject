@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane minHeight="560.0" minWidth="700.0" styleClass="home" stylesheets="@../../../../../Styles/home.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.Home">
+<GridPane minHeight="560.0" minWidth="700.0" styleClass="home" stylesheets="@../../../../../Styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.Home">
 
   <columnConstraints>
     <ColumnConstraints hgrow="NEVER" minWidth="150" prefWidth="150.0" />
@@ -66,19 +66,24 @@
       <children>
          <Button fx:id="accueil_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Dashboard" textFill="white">
             <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="20" />
+                   <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="20" />
             </graphic>
          </Button>
+          <!--
          <Button fx:id="travail_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Work" textFill="white">
-            <graphic>
-               <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="20" />
-            </graphic>
+             <ImageView fitHeight="20.0" fitWidth="20.0">
+                 <image>
+                     <Image url="@../Images/work.png" />
+                 </image>
+             </ImageView>
          </Button>
+         -->
          <Button fx:id="groupe_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Message" textFill="white">
             <graphic>
                <FontAwesomeIconView fill="WHITE" size="20" />
             </graphic>
          </Button>
+          <!--
          <Button fx:id="calendrier_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Calendrier" textFill="white">
             <graphic>
                <FontAwesomeIconView fill="WHITE" size="20" />
@@ -89,6 +94,7 @@
                <FontAwesomeIconView fill="WHITE" size="20" />
             </graphic>
          </Button>
+         -->
       </children>
    </VBox>
 

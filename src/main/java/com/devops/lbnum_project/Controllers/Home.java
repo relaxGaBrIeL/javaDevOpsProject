@@ -1,5 +1,6 @@
 package com.devops.lbnum_project.Controllers;
 
+import com.devops.lbnum_project.Controllers.services.FileExplore;
 import com.devops.lbnum_project.Models.DAOUser;
 import com.devops.lbnum_project.Views.ViewFactory;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
@@ -11,6 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -39,6 +41,7 @@ public class Home implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
         try {
             ViewFactory.setScene(app_content, "dashboard");
         } catch (IOException e) {
@@ -54,14 +57,15 @@ public class Home implements Initializable {
             }
         });
 
-        travail_btn.setOnAction(event -> {
-            try {
-                ViewFactory.setScene(app_content, "task");
-                header_name.setText("Tasks");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        //Not Implemented
+//        travail_btn.setOnAction(event -> {
+//            try {
+//                ViewFactory.setScene(app_content, "task");
+//                header_name.setText("Tasks");
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
 
         groupe_btn.setOnAction(event -> {
             try {
@@ -72,23 +76,24 @@ public class Home implements Initializable {
             }
         });
 
-        calendrier_btn.setOnAction(event -> {
-            try {
-                ViewFactory.setScene(app_content, "calendar");
-                header_name.setText("Calendar");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
-
-        dossier_btn.setOnAction(event -> {
-            try {
-                ViewFactory.setScene(app_content, "directory");
-                header_name.setText("Directory");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        //Not Implemented
+//        calendrier_btn.setOnAction(event -> {
+//            try {
+//                ViewFactory.setScene(app_content, "calendar");
+//                header_name.setText("Calendar");
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
+//
+//        dossier_btn.setOnAction(event -> {
+//            try {
+//                ViewFactory.setScene(app_content, "directory");
+//                header_name.setText("Directory");
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
 
     }
 }

@@ -12,16 +12,20 @@ import java.util.Scanner;
 public class Send implements  Runnable{
     private final ObjectOutputStream out;
     private final Socket socket;
-    public User getUser() {
-        return user;
-    }
 
     private final User user;
+
+
 
     public Send(Socket socket, ObjectOutputStream out, User user){
         this.socket = socket;
         this.out = out;
         this.user = user;
+    }
+
+
+    public User getUser() {
+        return user;
     }
 
     @Override

@@ -1,20 +1,21 @@
 package com.devops.lbnum_project.Controllers;
 
-import com.devops.lbnum_project.Controllers.services.FileExplore;
-import com.devops.lbnum_project.Models.DAOUser;
+import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
 import com.devops.lbnum_project.Views.ViewFactory;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Home implements Initializable {
@@ -29,24 +30,32 @@ public class Home implements Initializable {
 
     public FontAwesomeIconView profil;
     public Text header_name;
+    public Button btn_profil;
+    public Label username;
 
 
     public void logout(ActionEvent event) throws IOException {
 
         //TODO : mettre à jour le statut de l'utilisateur
-        ViewFactory.setPage("Login", event);
+        ViewFactory.setPage("Welcome", event);
+        LoginResponse.getClient().disconnectedServer();
+
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
         try {
             ViewFactory.setScene(app_content, "dashboard");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        username.setText(User.getFname());
+
+        btn_profil.setGraphic(new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/profil.png")),75.0,75.0,true,true)));
+
+        accueil_btn.setGraphic(new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/home.png")),75.0,75.0,true,true)));
 
         accueil_btn.setOnAction(event -> {
             try {
@@ -67,6 +76,8 @@ public class Home implements Initializable {
 //            }
 //        });
 
+        groupe_btn.setGraphic(new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/message.png")),75.0,75.0,true,true)));
+
         groupe_btn.setOnAction(event -> {
             try {
                 ViewFactory.setScene(app_content, "group");
@@ -77,23 +88,25 @@ public class Home implements Initializable {
         });
 
         //Not Implemented
-//        calendrier_btn.setOnAction(event -> {
-//            try {
-//                ViewFactory.setScene(app_content, "calendar");
-//                header_name.setText("Calendar");
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
-//
-//        dossier_btn.setOnAction(event -> {
-//            try {
-//                ViewFactory.setScene(app_content, "directory");
-//                header_name.setText("Directory");
-//            } catch (IOException e) {
-//                throw new RuntimeException(e);
-//            }
-//        });
+        calendrier_btn.setGraphic(new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/calendar.png")),75.0,75.0,true,true)));
+        calendrier_btn.setOnAction(event -> {
+            try {
+                ViewFactory.setScene(app_content, "calendar");
+                header_name.setText("task");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        dossier_btn.setGraphic(new ImageView(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/Images/work.png")),75.0,75.0,true,true)));
+        dossier_btn.setOnAction(event -> {
+            try {
+                ViewFactory.setScene(app_content, "directory");
+                header_name.setText("Directory");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
     }
 }

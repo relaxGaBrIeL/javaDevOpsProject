@@ -2,6 +2,7 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -23,32 +24,24 @@
   </rowConstraints>
 
     <!-- Bande haut -->
-    <GridPane styleClass="home_haut" GridPane.columnSpan="2">
+    <GridPane prefHeight="74.0" prefWidth="710.0" styleClass="home_haut" GridPane.columnSpan="2">
         <columnConstraints>
             <ColumnConstraints hgrow="NEVER" maxWidth="229.0" minWidth="10.0" prefWidth="150.0" />
-            <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity" minWidth="10.0" prefWidth="398.0" />
-            <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="152.0" minWidth="10.0" prefWidth="152.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="Infinity" minWidth="10.0" prefWidth="388.0" />
+            <ColumnConstraints fillWidth="false" hgrow="NEVER" maxWidth="229.0" minWidth="10.0" prefWidth="162.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
 
-         <Text fx:id="header_name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bureau" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <Text fx:id="header_name" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Bureau" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
              <font>
-                <Font name="System Bold" size="22.0" />
+                <Font name="System Bold" size="30.0" />
              </font>
          </Text>
 
-         <Button mnemonicParsing="false" GridPane.columnIndex="2">
-            <graphic>
-               <FontAwesomeIconView fill="WHITE" size="40" glyphName="BELL" />
-            </graphic>
-         </Button>
+         <Button mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="109.0" text="Se déconnecter" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
 
-         <Button mnemonicParsing="false" onAction="#logout" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
-            <graphic>
-               <FontAwesomeIconView fill="WHITE" size="40" glyphName="HOME"/>
-            </graphic>
          </Button>
 
       <ImageView fitHeight="50.0" fitWidth="56.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -56,17 +49,31 @@
             <Image url="@../Images/logoLBN_blanc.png" />
          </image>
       </ImageView>
+         <FontAwesomeIconView fill="WHITE" glyphName="BELL" opacity="0.82" size="40" text="" textAlignment="CENTER" wrappingWidth="47.0" GridPane.columnIndex="2">
+         <font>
+            <Font size="1.0" />
+         </font></FontAwesomeIconView>
     </GridPane>
 
 
 
 
   <!-- Bande gauche -->
-  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #474747;" GridPane.rowIndex="1">
+  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #474747;" styleClass="menu" GridPane.rowIndex="1">
       <children>
-         <Button fx:id="accueil_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Dashboard" textFill="white">
+
+          <Button fx:id="btn_profil" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="82.0" prefWidth="148.0" textFill="white">
             <graphic>
-                   <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="20" />
+               <Label text="Profile" textAlignment="CENTER" textFill="#ebe6e6" />
+            </graphic></Button>
+         <Label fx:id="username" prefHeight="18.0" prefWidth="56.0"  textAlignment="CENTER" textFill="#eee8e8" />
+         <Button fx:id="accueil_btn" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="119.0" prefWidth="148.0" textAlignment="JUSTIFY" textFill="white">
+            <graphic>
+               <FontAwesomeIconView fill="#fffefe" tabSize="10" text="Home" textAlignment="CENTER" wrappingWidth="50.0">
+                  <font>
+                     <Font size="50.0" />
+                  </font>
+               </FontAwesomeIconView>
             </graphic>
          </Button>
           <!--
@@ -78,23 +85,24 @@
              </ImageView>
          </Button>
          -->
-         <Button fx:id="groupe_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Message" textFill="white">
+         <Button fx:id="groupe_btn" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="108.0" prefWidth="148.0" textAlignment="CENTER" textFill="white">
             <graphic>
-               <FontAwesomeIconView fill="WHITE" size="20" />
+               <FontAwesomeIconView fill="WHITE" size="20" text="Message" textAlignment="CENTER" />
             </graphic>
          </Button>
-          <!--
-         <Button fx:id="calendrier_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Calendrier" textFill="white">
+
+         <Button fx:id="dossier_btn" alignment="BASELINE_LEFT" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="121.0" prefWidth="148.0" textAlignment="CENTER" textFill="white">
             <graphic>
-               <FontAwesomeIconView fill="WHITE" size="20" />
+               <Label alignment="CENTER" text="Dossier" textAlignment="CENTER" textFill="WHITE" />
             </graphic>
          </Button>
-         <Button fx:id="dossier_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="150.0" text="Dossier" textFill="white">
+
+      <Button fx:id="calendrier_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="119.0" prefWidth="148.0" textAlignment="CENTER" textFill="white">
             <graphic>
-               <FontAwesomeIconView fill="WHITE" size="20" />
+               <Label text="Calendrier" textAlignment="CENTER" textFill="#fcf8f8" />
             </graphic>
-         </Button>
-         -->
+      </Button>
+
       </children>
    </VBox>
 

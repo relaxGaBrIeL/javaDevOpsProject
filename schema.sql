@@ -17,6 +17,13 @@ CREATE TABLE Messages(
                          FOREIGN KEY(Id_User) REFERENCES Users(Id_User),
                          FOREIGN KEY(Id_User_1) REFERENCES Users(Id_User)
 );
+CREATE TABLE Directories (
+                             Id_Dir INT AUTO_INCREMENT,
+                             User_Id INT NOT NULL,
+                             Path VARCHAR(255) NOT NULL,
+                             PRIMARY KEY (Id_Dir),
+                             FOREIGN KEY (User_Id) REFERENCES Users(Id_User)
+);
 
 CREATE TABLE `Groups`
 (

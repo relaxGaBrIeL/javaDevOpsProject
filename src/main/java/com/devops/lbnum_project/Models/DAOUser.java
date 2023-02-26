@@ -20,13 +20,9 @@ public class DAOUser {
         List<User> users = new ArrayList<>();
         try {
             Statement stmt = DBConnection.getConnection().createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Users");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE Id_User <> " + User.getUserId());
             while (rs.next()) {
-                User user = new User("","","");
-
-                user.setlName(rs.getString("Lastname"));
-                user.setfName(rs.getString("Firstname"));
-                user.setEmail(rs.getString("Email"));
+                User user = new User(rs.getString("Lastname"),rs.getString("Firstname"),rs.getString("Email"));
 
                 users.add(user);
             }
@@ -34,9 +30,10 @@ public class DAOUser {
             stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            DBConnection.close();
         }
+//        finally {
+//            DBConnection.close();
+//        }
         return users;
     }
 
@@ -88,9 +85,10 @@ public class DAOUser {
             return new SignupResponse(true, user, "Successfully registered.");
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }finally {
-            DBConnection.close();
         }
+//        finally {
+//            DBConnection.close();
+//        }
     }
 
     /**
@@ -110,7 +108,9 @@ public class DAOUser {
                     String hashedPassword = rs.getString("Password");
                     if (BCrypt.checkpw(password, hashedPassword)) {
 
-                        User user = new User(rs.getString("Firstname"), rs.getString("Lastname"), rs.getString("Email"));
+                        User user = new User(rs.getInt("Id_User"),rs.getString("Firstname"), rs.getString("Lastname"), rs.getString("Email"));
+
+
                         return new LoginResponse(true, user);
                     } else {
                         return new LoginResponse(false, null);
@@ -120,9 +120,10 @@ public class DAOUser {
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
-            }finally {
-                DBConnection.close();
             }
+//            finally {
+//                DBConnection.close();
+//            }
         } else {
             return new LoginResponse(false, null);
         }

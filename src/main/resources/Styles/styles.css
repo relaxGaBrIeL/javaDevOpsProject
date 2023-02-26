@@ -26,12 +26,16 @@ Button:hover{
     -fx-font-size: 25px;
     -fx-background-radius: 30 30 30 30;
 }
+.home_haut  Button{
 
+    -fx-background-color: #587B7F;
+    -fx-background-radius: 30 30 30 30;
+}
 .retourWelcome {
     -fx-background-color: white;
 }
 
-.home Button{
+.menu Button{
     -fx-background-color: #474747;
     -fx-font-size: 15px;
 }

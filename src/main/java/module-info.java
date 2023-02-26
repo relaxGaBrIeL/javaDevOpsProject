@@ -8,6 +8,7 @@ module com.devops.lbnum_project {
     requires java.sql;
     requires org.mariadb.jdbc;
     requires jbcrypt;
+    requires java.desktop;
 
     opens com.devops.lbnum_project to javafx.fxml;
     exports com.devops.lbnum_project;
@@ -16,5 +17,6 @@ module com.devops.lbnum_project {
     exports com.devops.lbnum_project.Views;
     exports com.devops.lbnum_project.Controllers.socket;
     exports com.devops.lbnum_project.Controllers.authentication;
+    exports com.devops.lbnum_project.Controllers.fileExplore;
 
 }

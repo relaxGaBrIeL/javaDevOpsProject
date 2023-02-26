@@ -2,10 +2,13 @@ package com.devops.lbnum_project.Controllers;
 
 
 public class User {
-    private  String fName;
-    private  String lName;
+    private static String fName;
+    private static String lName;
     private  String email;
 
+    private static int UserId;
+
+    private String userName;
 
     public void setfName(String fName) {
         this.fName = fName;
@@ -19,18 +22,25 @@ public class User {
         this.email = email;
     }
 
-    public User(String fName, String lName, String email) {
+    public User(int id,String fName, String lName, String email) {
         this.fName = fName;
         this.lName = lName;
+        this.email = email;
+        UserId =id;
+
+    }
+    public User(String fName, String lName, String email) {
+        User.fName = fName;
+        this.userName = lName;
         this.email = email;
 
     }
 
-    public String getFname() {
+    public static  String getFname() {
         return fName;
     }
 
-    public String getLname() {
+    public static String getLname() {
         return lName;
     }
 
@@ -38,4 +48,11 @@ public class User {
         return email;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public static int getUserId() {
+        return UserId;
+    }
 }

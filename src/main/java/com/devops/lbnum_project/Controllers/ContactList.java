@@ -1,5 +1,7 @@
 package com.devops.lbnum_project.Controllers;
 
+import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
+import com.devops.lbnum_project.Controllers.authentication.SignupResponse;
 import com.devops.lbnum_project.Controllers.socket.ClientController;
 import com.devops.lbnum_project.Controllers.socket.SocketConnection;
 import com.devops.lbnum_project.Models.DAOUser;
@@ -20,6 +22,7 @@ import javafx.scene.text.TextFlow;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ContactList extends ClientController implements Initializable {
@@ -31,14 +34,14 @@ public class ContactList extends ClientController implements Initializable {
     public Button btn_send;
     public TextField tf_message;
 
-    public  void show(VBox vBox) {
+    public void show(VBox vBox) {
 
         List<User> users = db.getUsers();
         ListView<String> listView = new ListView<>();
 
         ObservableList<String> userList = FXCollections.observableArrayList();
         for (User user : users) {
-            userList.add(user.getLname());
+            userList.add(user.getUserName());
         }
 
         listView.setItems(userList);
@@ -49,26 +52,26 @@ public class ContactList extends ClientController implements Initializable {
 
     @Override
     public void conversation() {
-       SocketConnection client = getSocketConnection();
-        vbox_messages.heightProperty().addListener((observableValue, number, newValue) -> sp_main.setVvalue((Double)newValue));
+        SocketConnection client = SignupResponse.getClient() != null ? SignupResponse.getClient() : LoginResponse.getClient();
+        vbox_messages.heightProperty().addListener((observableValue, number, newValue) -> sp_main.setVvalue((Double) newValue));
         client.receiveMessageFromServer(vbox_messages);
 
         btn_send.setOnAction(actionEvent -> {
             String messageTosend = tf_message.getText();
-            if (!messageTosend.isEmpty()){
+            if (!messageTosend.isEmpty()) {
                 HBox hBox = new HBox();
                 hBox.setAlignment(Pos.CENTER_RIGHT);
-                hBox.setPadding(new Insets(5,5,5,10));
+                hBox.setPadding(new Insets(5, 5, 5, 10));
 
                 Text text = new Text(messageTosend);
                 TextFlow textFlow = new TextFlow(text);
 
                 textFlow.setStyle("-fx-color: rgb(239,242,255)" +
-                        ";-fx-background-color:rgb(15,125,242)"+
+                        ";-fx-background-color:rgb(15,125,242)" +
                         ";-fx-background-radius:20px");
 
-                textFlow.setPadding(new Insets(5,10,5,10));
-                text.setFill(Color.color(0.934,0.945,0.996));
+                textFlow.setPadding(new Insets(5, 10, 5, 10));
+                text.setFill(Color.color(0.934, 0.945, 0.996));
 
                 hBox.getChildren().add(textFlow);
                 vbox_messages.getChildren().add(hBox);
@@ -81,7 +84,7 @@ public class ContactList extends ClientController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-       conversation();
+        conversation();
         show(userList);
     }
 }

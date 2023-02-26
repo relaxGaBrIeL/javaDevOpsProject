@@ -9,6 +9,7 @@ public class SignupResponse {
     private final boolean success;
     private final User user;
     private final String message;
+    static SocketConnection client;
 
     public SignupResponse(boolean success, User user, String message) {
         this.success = success;
@@ -19,7 +20,8 @@ public class SignupResponse {
     public boolean isSuccess() {
         if (success) {
             try {
-                 new SocketConnection();
+                client =    new SocketConnection();
+                System.out.println("Connected au serveur !");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -29,6 +31,10 @@ public class SignupResponse {
 
     public User getUser() {
         return user;
+    }
+
+    public static SocketConnection getClient() {
+        return client;
     }
 
     public String getMessage() {

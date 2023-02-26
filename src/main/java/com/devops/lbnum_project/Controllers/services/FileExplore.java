@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class FileExplore {
 
-    private String path = "D:\\Documents\\Perso\\Etudes\\IUT Lyon1\\LP DevOps\\Cours\\Java avancé\\Projet\\javaDevOpsProject";
+    private String path = "C:\\Users\\etulyon1\\Desktop\\projects\\doc";
     private File[] liste;
 
     public FileExplore (){

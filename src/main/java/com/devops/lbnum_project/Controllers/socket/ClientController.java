@@ -1,5 +1,7 @@
 package com.devops.lbnum_project.Controllers.socket;
 
+import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
+import com.devops.lbnum_project.Controllers.authentication.SignupResponse;
 import javafx.application.Platform;
 
 
@@ -13,17 +15,13 @@ import javafx.scene.text.TextFlow;
 import java.io.IOException;
 
 public abstract class ClientController {
-
-    public SocketConnection getSocketConnection() {
-        try{
-            SocketConnection client = new SocketConnection();
-            System.out.println("Connected au serveur !");
-            return client;
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        return null;
-    }
+   // SocketConnection client = SignupResponse.getClient() != null ? SignupResponse.getClient() : LoginResponse.getClient();
+//    public SocketConnection getSocketConnection() {
+//
+//
+//
+//      //  return client;
+//    }
    public abstract void  conversation();
 
     public static void addLabel(String messageFromServer, VBox vBox){

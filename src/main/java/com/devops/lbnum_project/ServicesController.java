@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.services;
+package com.devops.lbnum_project;
 
 import com.devops.lbnum_project.services.authentication.LoginController;
 import com.devops.lbnum_project.Views.ViewFactory;
@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class Home implements Initializable {
+public class ServicesController implements Initializable {
     public Button accueil_btn;
     public Button travail_btn;
     public Button groupe_btn;

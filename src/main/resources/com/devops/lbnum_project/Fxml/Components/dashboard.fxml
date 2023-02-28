@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane prefHeight="400.0" prefWidth="600.0" styleClass="dashboard" stylesheets="@../../../../../Styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.services.Dashboard">
+<GridPane prefHeight="400.0" prefWidth="600.0" styleClass="dashboard" stylesheets="@../../../../../Styles/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Dashboard">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="328.0" />
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="272.0" />

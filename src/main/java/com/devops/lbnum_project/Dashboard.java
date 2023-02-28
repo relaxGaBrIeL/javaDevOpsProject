@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.services;
+package com.devops.lbnum_project;
 
 import com.devops.lbnum_project.services.fileExplore.FileExploreHome;
 import javafx.event.ActionEvent;

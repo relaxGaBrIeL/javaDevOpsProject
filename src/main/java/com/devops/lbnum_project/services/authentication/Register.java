@@ -1,7 +1,6 @@
-package com.devops.lbnum_project.Controllers.authentication;
+package com.devops.lbnum_project.services.authentication;
 
 import com.devops.lbnum_project.Models.DAOUser;
-import com.devops.lbnum_project.Models.Model;
 import com.devops.lbnum_project.Models.Validator;
 import com.devops.lbnum_project.Views.ViewFactory;
 import javafx.event.ActionEvent;
@@ -45,7 +44,7 @@ public class Register {
                 msg_form.setText("Vos mots de passe doit être identique!");
 
             } else {
-                SignupResponse signupResponse = db.signup(mail, password, fName, lName);
+                SignupController signupResponse = db.signup(mail, password, fName, lName);
 //                db.closeConnection();
                 if (signupResponse.isSuccess()) {
                     msg_form.setText(signupResponse.getMessage());

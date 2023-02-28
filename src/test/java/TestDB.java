@@ -1,7 +1,5 @@
-import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
-import com.devops.lbnum_project.Controllers.User;
+import com.devops.lbnum_project.services.client.User;
 import com.devops.lbnum_project.Models.DAOUser;
-import com.devops.lbnum_project.Models.Model;
 
 import java.util.List;
 

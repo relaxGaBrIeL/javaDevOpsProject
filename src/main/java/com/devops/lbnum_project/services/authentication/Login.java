@@ -1,7 +1,7 @@
-package com.devops.lbnum_project.Controllers.authentication;
+package com.devops.lbnum_project.services.authentication;
 
 import com.devops.lbnum_project.Models.DAOUser;
-import com.devops.lbnum_project.Models.Model;
+
 import com.devops.lbnum_project.Models.Validator;
 import com.devops.lbnum_project.Views.ViewFactory;
 import javafx.event.ActionEvent;
@@ -31,7 +31,7 @@ public class Login {
         String mail = email_field.getText();
         String password = password_field.getText();
         if (Validator.validateEmail(mail)) {
-            LoginResponse loginResponse = db.login(mail, password);
+            LoginController loginResponse = db.login(mail, password);
 
             if (loginResponse.isConnected()) {
                 msg_form.setText("connected!");

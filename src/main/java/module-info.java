@@ -12,11 +12,12 @@ module com.devops.lbnum_project {
 
     opens com.devops.lbnum_project to javafx.fxml;
     exports com.devops.lbnum_project;
-    exports com.devops.lbnum_project.Controllers;
+    exports com.devops.lbnum_project.services;
     exports com.devops.lbnum_project.Models;
     exports com.devops.lbnum_project.Views;
-    exports com.devops.lbnum_project.Controllers.socket;
-    exports com.devops.lbnum_project.Controllers.authentication;
-    exports com.devops.lbnum_project.Controllers.fileExplore;
+    exports com.devops.lbnum_project.services.client;
+    exports com.devops.lbnum_project.services.authentication;
+    exports com.devops.lbnum_project.services.fileExplore;
+    exports com.devops.lbnum_project.services.chat;
 
 }

@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.services;
 
 import com.devops.lbnum_project.Views.ViewFactory;
 import javafx.event.ActionEvent;

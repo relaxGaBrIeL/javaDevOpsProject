@@ -1,9 +1,7 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.services.client;
 
-import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
-import com.devops.lbnum_project.Controllers.authentication.SignupResponse;
-import com.devops.lbnum_project.Controllers.socket.ClientController;
-import com.devops.lbnum_project.Controllers.socket.SocketConnection;
+import com.devops.lbnum_project.services.authentication.LoginController;
+import com.devops.lbnum_project.services.authentication.SignupController;
 import com.devops.lbnum_project.Models.DAOUser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,10 +20,9 @@ import javafx.scene.text.TextFlow;
 
 import java.net.URL;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ContactList extends ClientController implements Initializable {
+public class Users extends ClientController implements Initializable {
 
     static DAOUser db = new DAOUser();
     public VBox userList;
@@ -52,7 +49,7 @@ public class ContactList extends ClientController implements Initializable {
 
     @Override
     public void conversation() {
-        SocketConnection client = SignupResponse.getClient() != null ? SignupResponse.getClient() : LoginResponse.getClient();
+        SocketConnection client = SignupController.getClient() != null ? SignupController.getClient() : LoginController.getClient();
         vbox_messages.heightProperty().addListener((observableValue, number, newValue) -> sp_main.setVvalue((Double) newValue));
         client.receiveMessageFromServer(vbox_messages);
 

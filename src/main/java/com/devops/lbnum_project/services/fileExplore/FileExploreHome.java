@@ -1,14 +1,13 @@
-package com.devops.lbnum_project.Controllers.services;
+package com.devops.lbnum_project.services.fileExplore;
 
 import java.io.File;
-import java.util.Objects;
 
-public class FileExplore {
+public class FileExploreHome {
 
     private String path = "C:\\Users\\etulyon1\\Desktop\\projects\\doc";
     private File[] liste;
 
-    public FileExplore (){
+    public FileExploreHome(){
         loadFolderContent();
     }
 

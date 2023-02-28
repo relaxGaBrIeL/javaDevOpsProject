@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers.socket;
+package com.devops.lbnum_project.services.client;
 
 import javafx.scene.layout.VBox;
 

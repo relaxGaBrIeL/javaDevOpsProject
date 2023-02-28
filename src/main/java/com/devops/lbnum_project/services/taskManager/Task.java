@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers.task;
+package com.devops.lbnum_project.services.taskManager;
 
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;

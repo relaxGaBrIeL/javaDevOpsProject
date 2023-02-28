@@ -1,15 +1,15 @@
-package com.devops.lbnum_project.Controllers.authentication;
+package com.devops.lbnum_project.services.authentication;
 
-import com.devops.lbnum_project.Controllers.User;
-import com.devops.lbnum_project.Controllers.socket.SocketConnection;
+import com.devops.lbnum_project.services.client.User;
+import com.devops.lbnum_project.services.client.SocketConnection;
 
 import java.io.IOException;
 
-public class LoginResponse {
+public class LoginController {
     private final boolean connected;
     private final User user;
     static SocketConnection client;
-    public LoginResponse(boolean connected, User user) {
+    public LoginController(boolean connected, User user) {
         this.connected = connected;
         this.user = user;
     }

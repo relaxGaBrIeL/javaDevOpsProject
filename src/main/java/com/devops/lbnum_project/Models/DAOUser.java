@@ -1,8 +1,8 @@
 package com.devops.lbnum_project.Models;
 
-import com.devops.lbnum_project.Controllers.User;
-import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
-import com.devops.lbnum_project.Controllers.authentication.SignupResponse;
+import com.devops.lbnum_project.services.client.User;
+import com.devops.lbnum_project.services.authentication.LoginController;
+import com.devops.lbnum_project.services.authentication.SignupController;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
@@ -67,9 +67,9 @@ public class DAOUser {
      * @param lastname
      * @return
      */
-    public SignupResponse signup(String email, String password, String firstname, String lastname) {
+    public SignupController signup(String email, String password, String firstname, String lastname) {
         if (checkEmail(email)) {
-            return new SignupResponse(false, null, "This email is already registered.");
+            return new SignupController(false, null, "This email is already registered.");
         }
         // Hash the password using a strong hashing algorithm like bcrypt or scrypt
 
@@ -82,7 +82,7 @@ public class DAOUser {
             ps.setString(4, hashedPassword);
             ps.executeUpdate();
             User user = new User(firstname, lastname, email);
-            return new SignupResponse(true, user, "Successfully registered.");
+            return new SignupController(true, user, "Successfully registered.");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -98,7 +98,7 @@ public class DAOUser {
      * @param password password
      * @return LoginResponse
      */
-    public LoginResponse login(String email, String password) {
+    public LoginController login(String email, String password) {
         if (checkEmail(email)) {
             try {
                 PreparedStatement ps = DBConnection.getConnection().prepareStatement("SELECT * FROM `Users` WHERE `Email`=?");
@@ -111,12 +111,12 @@ public class DAOUser {
                         User user = new User(rs.getInt("Id_User"),rs.getString("Firstname"), rs.getString("Lastname"), rs.getString("Email"));
 
 
-                        return new LoginResponse(true, user);
+                        return new LoginController(true, user);
                     } else {
-                        return new LoginResponse(false, null);
+                        return new LoginController(false, null);
                     }
                 } else {
-                    return new LoginResponse(false, null);
+                    return new LoginController(false, null);
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -125,7 +125,7 @@ public class DAOUser {
 //                DBConnection.close();
 //            }
         } else {
-            return new LoginResponse(false, null);
+            return new LoginController(false, null);
         }
     }
 

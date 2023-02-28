@@ -1,7 +1,8 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.services;
 
-import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
+import com.devops.lbnum_project.services.authentication.LoginController;
 import com.devops.lbnum_project.Views.ViewFactory;
+import com.devops.lbnum_project.services.client.User;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 
 import javafx.event.ActionEvent;
@@ -38,7 +39,7 @@ public class Home implements Initializable {
 
         //TODO : mettre à jour le statut de l'utilisateur
         ViewFactory.setPage("Welcome", event);
-        LoginResponse.getClient().disconnectedServer();
+        LoginController.getClient().disconnectedServer();
 
     }
 

@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.services.chat;
 
 import java.io.Serial;
 import java.io.Serializable;

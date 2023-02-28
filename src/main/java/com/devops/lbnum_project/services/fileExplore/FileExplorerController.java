@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers.fileExplore;
+package com.devops.lbnum_project.services.fileExplore;
 
 import javafx.scene.control.TreeCell;
 import javafx.scene.image.Image;
@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import java.io.File;
 import java.util.Objects;
 
-public class  FileTreeCell extends TreeCell<File> {
+public class FileExplorerController extends TreeCell<File> {
     @Override
     protected void updateItem(File item, boolean empty) {
         super.updateItem(item, empty);

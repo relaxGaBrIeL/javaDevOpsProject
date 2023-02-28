@@ -1,7 +1,5 @@
-package com.devops.lbnum_project.Controllers.socket;
+package com.devops.lbnum_project.services.client;
 
-import com.devops.lbnum_project.Controllers.authentication.LoginResponse;
-import com.devops.lbnum_project.Controllers.authentication.SignupResponse;
 import javafx.application.Platform;
 
 
@@ -11,8 +9,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-
-import java.io.IOException;
 
 public abstract class ClientController {
    // SocketConnection client = SignupResponse.getClient() != null ? SignupResponse.getClient() : LoginResponse.getClient();

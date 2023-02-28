@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers.calendar;
+package com.devops.lbnum_project.services.calendar;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -26,7 +26,6 @@ public class Calendar {
     public LocalDate getFirstDayOfMonth() {
         return currentYearMonth.atDay(1);
     }
-
     public int getDaysInMonth() {
         return currentYearMonth.lengthOfMonth();
     }

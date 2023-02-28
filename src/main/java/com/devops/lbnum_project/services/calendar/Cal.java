@@ -1,8 +1,6 @@
-package com.devops.lbnum_project.Controllers.calendar;
+package com.devops.lbnum_project.services.calendar;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToolBar;
@@ -46,19 +44,19 @@ public class Cal implements Initializable {
 
         monthYearLabel.setText(currentYearMonth.getMonth().toString() + " " + currentYearMonth.getYear());
         monthYearLabel.setFont(Font.font("Arial", FontWeight.BOLD, 18));
-        tolbar.getItems().addAll(previousMonthButton, nextMonthButton);
+        //tolbar.getItems().addAll(previousMonthButton, nextMonthButton);
 
 //        calendarGrid = new GridPane();
 //        calendarGrid.setAlignment(Pos.CENTER);
 //        calendarGrid.setHgap(10);
 //        calendarGrid.setVgap(10);
 //
-//        calendar.setCenter(calendarGrid);
-//        updateCalendar();
+
+       //updateCalendar();
     }
 
 
-    private void updateCalendar() {
+    public void updateCalendar() {
         calendarGrid.getChildren().clear();
 
         // Ajouter les en-têtes de colonne
@@ -98,14 +96,11 @@ public class Cal implements Initializable {
                 row++;
             }
         }
-
-        // Mettre à jour le label du mois et de l'année
-        monthYearLabel.setText(currentYearMonth.getMonth().toString() + " " + currentYearMonth.getYear());
+        calendar.setCenter(calendarGrid);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        createCalendar();
+       // createCalendar();
     }
-
 }

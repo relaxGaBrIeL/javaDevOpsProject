@@ -1,6 +1,6 @@
-package com.devops.lbnum_project.Controllers.fileExplore;
+package com.devops.lbnum_project.services.fileExplore;
 
-import com.devops.lbnum_project.Controllers.User;
+import com.devops.lbnum_project.services.client.User;
 import com.devops.lbnum_project.Models.DAODirectories;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -40,7 +40,7 @@ public class FileExplorer implements Initializable {
         treeView.setPrefWidth(200.0);
         treeView.setRoot(root.get());
         treeView.setShowRoot(false);
-        treeView.setCellFactory(tv -> new FileTreeCell());
+        treeView.setCellFactory(tv -> new FileExplorerController());
         treeView.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {

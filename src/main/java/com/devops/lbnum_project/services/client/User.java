@@ -1,4 +1,4 @@
-package com.devops.lbnum_project.Controllers;
+package com.devops.lbnum_project.services.client;
 
 
 public class User {

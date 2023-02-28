@@ -1,17 +1,17 @@
-package com.devops.lbnum_project.Controllers.authentication;
+package com.devops.lbnum_project.services.authentication;
 
-import com.devops.lbnum_project.Controllers.User;
-import com.devops.lbnum_project.Controllers.socket.SocketConnection;
+import com.devops.lbnum_project.services.client.User;
+import com.devops.lbnum_project.services.client.SocketConnection;
 
 import java.io.IOException;
 
-public class SignupResponse {
+public class SignupController {
     private final boolean success;
     private final User user;
     private final String message;
     static SocketConnection client;
 
-    public SignupResponse(boolean success, User user, String message) {
+    public SignupController(boolean success, User user, String message) {
         this.success = success;
         this.user = user;
         this.message = message;

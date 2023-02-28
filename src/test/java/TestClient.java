@@ -1,8 +1,3 @@
-import com.devops.lbnum_project.Controllers.User;
-import com.devops.lbnum_project.Controllers.socket.SocketConnection;
-
-import java.io.IOException;
-
 public class TestClient {
     public static void main(String[] args) {
 //        try {

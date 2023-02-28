@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="calendar" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.Controllers.calendar.Cal">
+<BorderPane fx:id="calendar" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devops.lbnum_project.services.calendar.Cal">
     <top>
         <VBox alignment="CENTER">
             <ToolBar fx:id="tolbar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="340.0">
-<!--                <Button onAction="#nextMonth" text="&gt;&gt;"/>-->
-<!--                <Button onAction="#previousMonth" text="&lt;&lt;"/>-->
+                <Button onAction="#nextMonth" text=">>"/>
+                <Button onAction="#previousMonth" text="<<"/>
             </ToolBar>
             <Label fx:id="monthYearLabel" prefHeight="27.0" prefWidth="499.0" style="-fx-font-weight: bold; -fx-font-size: 18;" text="Month Year" />
         </VBox>
     </top>
-<!--    <center>-->
-<!--        <GridPane fx:id="calendarGrid" alignment="CENTER" hgap="10" vgap="10" />-->
-<!--    </center>-->
+    <center>
+        <GridPane fx:id="calendarGrid" alignment="CENTER" hgap="10" vgap="10" />
+    </center>
 </BorderPane>

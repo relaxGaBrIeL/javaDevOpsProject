@@ -1,6 +1,6 @@
 package com.devops.lbnum_project.Models;
 
-import com.devops.lbnum_project.Controllers.Message;
+import com.devops.lbnum_project.services.chat.Message;
 
 import java.sql.*;
 import java.util.ArrayList;
